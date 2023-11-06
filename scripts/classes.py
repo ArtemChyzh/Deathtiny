@@ -30,36 +30,6 @@ class Tile(Object):
     weight : int
     image_path : str
 
-class Room():
-    scene : list = [[]]
+class Soul(Object): pass
 
-    boss_fight : bool
-    item_list : list
-    enemy_list : list
-    
-    def create() : pass
-
-class Game():
-    war_room_list : list
-    starve_room_list : list
-    plague_room_list : list
-
-
-class Gamer(Actor):
-    def __init__(self) -> None:
-        self.speed = 10
-        self.damage = 1
-        self.health = 10
-
-        self.animation_sheet : dict
-        self.inventory : set = ()
-
-class Floor(Tile):
-    def __init__(self) -> None:
-        self.weight = 0
-        self.image_path = ""
-
-class Wall(Tile):
-    def __init__(self) -> None:
-        self.weight = 100
-        self.image_path = ""
+class Hider(Object): pass
