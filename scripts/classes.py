@@ -10,6 +10,7 @@ class Object():
         self.y += deltaY
     def X(self) : return self.x
     def Y(self) : return self.y
+    def checkType() : return "Object"
 
 class Actor(Object):
     speed : int
@@ -20,16 +21,20 @@ class Actor(Object):
 
     def move() : pass
     def attack() : pass
+    def checkType(): return "Actor"
 
 class Item(Object):
-    probability : float
     hidden : bool
-    animation_sheet : list
+    def checkType(): return "Item"
 
 class Tile(Object):
     weight : int
     image_path : str
 
-class Soul(Object): pass
+class Soul(Item): pass
 
-class Hider(Object): pass
+class Hider(Actor):
+    def __init__(self) -> None:
+        self.health = 5
+        self.damage = 0
+        self.speed = 0
