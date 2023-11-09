@@ -1,5 +1,5 @@
 import pygame
-import settings
+import constants
 
 pygame.init()
 screen = pygame.display.set_mode((settings.WIDTH, settings.HEIGHT), flags=((pygame.NOFRAME)*int(settings.RELEASE)))
@@ -7,6 +7,7 @@ screen = pygame.display.set_mode((settings.WIDTH, settings.HEIGHT), flags=((pyga
 player = pygame.image.load("../animation/death/standard/front/idle.png")
 
 if __name__ == "__main__":
+
     game_over = False
     while not game_over:
 
