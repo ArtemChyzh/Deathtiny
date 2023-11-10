@@ -2,7 +2,7 @@ import pygame
 import constants
 
 pygame.init()
-screen = pygame.display.set_mode((settings.WIDTH, settings.HEIGHT), flags=((pygame.NOFRAME)*int(settings.RELEASE)))
+screen = pygame.display.set_mode((constants.WIDTH, constants.HEIGHT), flags=pygame.NOFRAME if constants.RELEASE else 0)
 
 player = pygame.image.load("../animation/death/standard/front/idle.png")
 
