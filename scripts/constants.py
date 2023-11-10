@@ -6,11 +6,11 @@ monitor = get_monitors()[0]
 RELEASE = True
 WIDTH = monitor.width if RELEASE else monitor.width/2
 HEIGHT = monitor.height if RELEASE else monitor.height/2
-FPS = 12
+FPS = 20
 
-MIN_WIDTH = round(WIDTH / 100)
+MIN_WIDTH = round(WIDTH / 50) + 1
 MAX_WIDTH = MIN_WIDTH * 3
-MIN_HEIGHT = round(HEIGHT / 100)
+MIN_HEIGHT = round(HEIGHT / 50) + 1
 MAX_HEIGHT = MIN_HEIGHT * 3
 
 wall = Image.open('../tiles/room/walls/wall.png')

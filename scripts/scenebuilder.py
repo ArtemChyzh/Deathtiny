@@ -45,9 +45,11 @@ class RoomMatrix:
 
 class RoomImage:
     @staticmethod
-    def draw(matrix: RoomMatrix):
+    def path_to_room(matrix: RoomMatrix):
         result = Image.new('RGB', (matrix.width * 50, matrix.height * 50), (0, 0, 0))
         for i in matrix.matrix:
             for j in i:
                 result.paste(tiles[j.mode], (j.x * 50, j.y * 50))
-        result.save(f"../rooms/{matrix.counter}.png", "PNG")
+        path = f"../rooms/{matrix.counter}.png"
+        result.save(path, "PNG")
+        return path
