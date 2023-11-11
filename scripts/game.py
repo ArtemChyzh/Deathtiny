@@ -44,6 +44,7 @@ if __name__ == "__main__":
         screen.blit(move_right[player_anim_count], (70, 70))
         player_anim_count = 0 if player_anim_count == 3 else player_anim_count+1
         bg_offset_x += 10
+        
         pygame.display.update()
 
         for event in pygame.event.get():
