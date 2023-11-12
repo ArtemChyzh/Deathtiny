@@ -2,7 +2,7 @@ import os
 import random
 import pygame
 import constants
-import scenebuilder
+import levelbuilder
 
 clock = pygame.time.Clock()
 pygame.init()
