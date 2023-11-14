@@ -16,13 +16,13 @@ class Player(metaclass=Singleton):
     SPEED_SCALE = 10
 
     def __init__(self):
-        self.state: States = States.IDLE
-        self.side: Sides = Sides.FRONT
-        self.upgrade: Upgrades = Upgrades.NO
         self.weapon: Weapon = Weapon.SICKLE
+        self.upgrade: Upgrades = Upgrades.NO
+        self.side: Sides = Sides.FRONT
+        self.state: States = States.IDLE
 
-        self.animation_set: list = animations["death"][f"{States.IDLE.value}"][f"{Weapon.SICKLE.value}"][
-            f"{Upgrades.NO.value}"][f"{Sides.FRONT.value}"]
+        self.animation_set: list = animations["death"][f"{self.weapon.value}"][f"{self.upgrade.value}"][
+            f"{self.side.value}"][f"{self.state.value}"]
 
         self.x: int = 200
         self.y: int = 200
@@ -52,5 +52,5 @@ class Player(metaclass=Singleton):
         if self.state in Player.UNIVERSAL_STATES:
             self.animation_set = animations["death"][f"{self.state.value}"]
         else:
-            self.animation_set = animations["death"][f"{self.state.value}"][f"{self.weapon.value}"][
-                f"{self.upgrade.value}"][f"{self.side.value}"]
+            self.animation_set = animations["death"][f"{self.weapon.value}"][
+                f"{self.upgrade.value}"][f"{self.side.value}"][f"{self.state.value}"]
