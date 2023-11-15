@@ -625,7 +625,7 @@ animations = {
                   image.load("../animation/slime/split/3.png")]
     },
 
-    "plague": [image.load("../animation/plague/idle.png")],
+    "plague": {"idle": [image.load("../animation/plague/idle.png")]},
     "war": {
         "move": [image.load("../animation/war/move/0.png"),
                  image.load("../animation/war/move/1.png"),
@@ -643,19 +643,40 @@ animations = {
         }
     },
     "cerberus": {
-        "idle": {
-            1: [image.load("../animation/cerberus/idle/1/idle.png")],
-            2: [image.load("../animation/cerberus/idle/2/idle.png")],
-            3: [image.load("../animation/cerberus/idle/3/idle.png")],
-            4: [image.load("../animation/cerberus/idle/4/idle.png")],
-            5: [image.load("../animation/cerberus/idle/5/idle.png")]
+        1: {
+            "idle": [image.load("../animation/cerberus/idle/1/idle.png")],
+            "attack": [image.load("../animation/cerberus/attack/1/0.png"),
+                       image.load("../animation/cerberus/attack/1/1.png"),
+                       image.load("../animation/cerberus/attack/1/2.png"),
+                       image.load("../animation/cerberus/attack/1/3.png")]
         },
-        "attack": {
-            1: [image.load("../animation/cerberus/attack/1/idle.png")],
-            2: [image.load("../animation/cerberus/attack/2/idle.png")],
-            3: [image.load("../animation/cerberus/attack/3/idle.png")],
-            4: [image.load("../animation/cerberus/attack/4/idle.png")],
-            5: [image.load("../animation/cerberus/attack/5/idle.png")]
+        2: {
+            "idle": [image.load("../animation/cerberus/idle/2/idle.png")],
+            "attack": [image.load("../animation/cerberus/attack/2/0.png"),
+                       image.load("../animation/cerberus/attack/2/1.png"),
+                       image.load("../animation/cerberus/attack/2/2.png"),
+                       image.load("../animation/cerberus/attack/2/3.png")]
+        },
+        3: {
+            "idle": [image.load("../animation/cerberus/idle/3/idle.png")],
+            "attack": [image.load("../animation/cerberus/attack/3/0.png"),
+                       image.load("../animation/cerberus/attack/3/1.png"),
+                       image.load("../animation/cerberus/attack/3/2.png"),
+                       image.load("../animation/cerberus/attack/3/3.png")]
+        },
+        4: {
+            "idle": [image.load("../animation/cerberus/idle/4/idle.png")],
+            "attack": [image.load("../animation/cerberus/attack/4/0.png"),
+                       image.load("../animation/cerberus/attack/4/1.png"),
+                       image.load("../animation/cerberus/attack/4/2.png"),
+                       image.load("../animation/cerberus/attack/4/3.png")]
+        },
+        5: {
+            "idle": [image.load("../animation/cerberus/idle/5/idle.png")],
+            "attack": [image.load("../animation/cerberus/attack/5/0.png"),
+                       image.load("../animation/cerberus/attack/5/1.png"),
+                       image.load("../animation/cerberus/attack/5/2.png"),
+                       image.load("../animation/cerberus/attack/5/3.png")]
         }
     },
     "apocalypse": {

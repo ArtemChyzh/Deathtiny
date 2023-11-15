@@ -1,8 +1,8 @@
 import os
 import random
 import pygame
+import animation
 import constants
-import levelbuilder
 
 clock = pygame.time.Clock()
 pygame.init()
@@ -10,29 +10,13 @@ screen = pygame.display.set_mode((constants.WIDTH, constants.HEIGHT), flags=pyga
 
 rooms_count = random.randint(20, 50)
 rooms = []
-for i in range(rooms_count):
-    rooms.append(scenebuilder.RoomMatrix())
 
-actual_room = pygame.image.load(scenebuilder.RoomImage.path_to_room(rooms[0]))
-player = pygame.image.load("../animation/death/standard/front/idle.png")
-move_right = [
-    pygame.image.load("../animation/death/standard/right/0.png"),
-    pygame.image.load("../animation/death/standard/right/1.png"),
-    pygame.image.load("../animation/death/standard/right/2.png"),
-    pygame.image.load("../animation/death/standard/right/3.png")
-]
+anim_set: dict = animation.animations["death"]["sickle"]["no"]
+move_right: list = anim_set["right"]["move"]
+move_left: list = anim_set["left"]["move"]
+attack_right: list = anim_set["right"]["attack"]
 
-move_left = [
-    pygame.image.load("../animation/death/standard/left/0.png"),
-    pygame.image.load("../animation/death/standard/left/1.png"),
-    pygame.image.load("../animation/death/standard/left/2.png"),
-    pygame.image.load("../animation/death/standard/left/3.png")
-]
-
-player_anim_count = 0
-
-bg_offset_x = 0
-bg_offset_y = 0
+player_anim_count: int = 0
 
 if __name__ == "__main__":
 
@@ -40,10 +24,8 @@ if __name__ == "__main__":
     while not game_over:
 
         clock.tick(constants.FPS)
-        screen.blit(actual_room, (-bg_offset_x, 0))
         screen.blit(move_right[player_anim_count], (70, 70))
-        player_anim_count = 0 if player_anim_count == 3 else player_anim_count+1
-        bg_offset_x += 10
+        player_anim_count = 0 if player_anim_count == len(move_right)-1 else player_anim_count+1
         
         pygame.display.update()
 
