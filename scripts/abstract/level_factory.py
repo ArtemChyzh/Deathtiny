@@ -1,21 +1,15 @@
 from scripts.level import Level
-from abc import ABC, abstractmethod
+from scripts.abstract.generation_strategy import GenerationStrategy
 
 
-class Square:
-    x: int
-    y: int
-    mode: str
-
-    def __init__(self, x, y, mode):
-        self.x = x
-        self.y = y
-        self.mode = mode
-
-
-class AbstractLevelFactory(ABC):
+class AbstractLevelFactory:
     counter: int = 0
 
-    @abstractmethod
+    def __init__(self, strategy: GenerationStrategy):
+        self.strategy = strategy
+
     def create(self, is_open=False) -> Level:
-        raise NotImplementedError
+        level = self.strategy.create(is_open)
+        level.img_path = f"../rooms/{AbstractLevelFactory.counter}.png"
+        AbstractLevelFactory.counter += 1
+        return level

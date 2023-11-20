@@ -3,7 +3,8 @@ from scripts.settings.leveltiles import TILE_SIZE
 
 
 class Level:
-    def __init__(self, width: int, height: int, enter: Object, leave: Object, matrix: list, img_path: str, locked: bool = True):
+    def __init__(self, width: int, height: int, enter, leave, matrix: list,
+                 locked: bool = True, img_path: str = ".png"):
 
         self.width = width
         self.height = height
