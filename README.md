@@ -1,3 +1,3 @@
 # Deathtiny
-Rogue-like 2dgame
-Study project for learning design patterns
+Rogue-like 2dgame.<br>
+Study project for learning design patterns.
